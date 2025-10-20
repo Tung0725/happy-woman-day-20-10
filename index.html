@@ -9,9 +9,26 @@
 </head>
     
 <body class="not-loaded">
-    <audio autoplay loop>
-       <source src="music\Giai điệu này không lời, nhưng trái tim nghe được hết.mp3" type="audio/mpeg">
+    <button id="playBtn" style="position: fixed; top: 30px; right: 30px; z-index: 1000; padding: 10px; cursor: pointer;">
+        🎵
+    </button>
+    <audio id="bgMusic" loop>
+        <source src="music/song.mp3" type="audio/mpeg">
     </audio>
+
+    <!-- Thêm script này vào cuối body -->
+    <script>
+        document.getElementById('playBtn').addEventListener('click', function() {
+            const audio = document.getElementById('bgMusic');
+            if (audio.paused) {
+                audio.play();
+                this.textContent = '🔇';
+            } else {
+                audio.pause();
+                this.textContent = '🎵';
+            }
+        });
+    </script>
     <div class="night"></div>
     <div class="happy-woman-day">𝓗𝓪𝓹𝓹𝔂 𝔀𝓸𝓶𝓮𝓷'𝓼 𝓭𝓪𝔂 2️⃣0️⃣/1️⃣0️⃣</div>
     <div class="flowers">
